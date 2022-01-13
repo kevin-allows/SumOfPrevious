@@ -10,8 +10,24 @@ public class SumOfPrevious {
         System.out.println(Arrays.toString(getSumCheckArray(array)));
     }
 
-    public static boolean[] getSumCheckArray(int[] array){
-        int sumOfPrevious = 0;
+    public static boolean[] getSumCheckArray(int[] array) {
+        int sumOfTwoPrevious = 0;
+        boolean[] arrayBoolean = new boolean[array.length];
+        for (int i = 2; i < array.length; i++) {
+            sumOfTwoPrevious = array[i-2] + array[i-1];
+            if (array[i]==sumOfTwoPrevious)
+                    arrayBoolean[i]=true;
+        }
+        return arrayBoolean;
+    }
+}
+
+
+
+        /*else if (i == (array.length-1)){
+                sumOfPrevious = sumOfPrevious + array[i];
+                arrayBoolean[i] = true;*/
+/*
         boolean[] arrayBoolean = new boolean[array.length];
         for (int i=0; i<array.length; i++){
             sumOfPrevious = sumOfPrevious + array[i];
@@ -24,5 +40,4 @@ public class SumOfPrevious {
 
             }
         }return arrayBoolean;
-    }
-}
+        */
